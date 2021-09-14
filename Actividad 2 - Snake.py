@@ -6,6 +6,22 @@ food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
+#Elegir la velocidad de Snake
+v = 0
+def inicio(velocidad):
+    print("¡Bienvenido al Snake Game!")
+    velocidad = input("Elija la velocidad de Snake: Alto, Medio, Bajo.\nVelocidad: ")
+    if velocidad.lower() == "alto":
+        return 20
+    elif velocidad.lower() == "medio":
+        return 10
+    elif velocidad.lower() == "bajo":
+        return 5
+    else:
+        print("Elija una de las 3 opciones")
+        inicio()
+#Elegir la velocidad de Snake
+
 def change(x, y):
     "Change snake direction."
     aim.x = x
@@ -47,9 +63,10 @@ setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
 listen()
-onkey(lambda: change(10, 0), 'Right')
-onkey(lambda: change(-10, 0), 'Left')
-onkey(lambda: change(0, 10), 'Up')
-onkey(lambda: change(0, -10), 'Down')
+v = inicio(v)
+onkey(lambda: change(v, 0), 'Right')
+onkey(lambda: change(-v, 0), 'Left')
+onkey(lambda: change(0, v), 'Up')
+onkey(lambda: change(0, -v), 'Down')
 move()
 done()
