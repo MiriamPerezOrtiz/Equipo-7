@@ -8,3 +8,19 @@ La descripción del problema es el siguiente: Un granjero tiene un zorro, un gan
 El reto consiste en crear un código que pueda resolver el problema, sin embargo tenemos instrucciones iniciales las cuales son: el programa desarrollado debe ser capaz de llegar a la solución por sí mismo. Es claro que el programador no da la solución al programa, sino que por el contrario, diseña uno que sea capaz de encontrar dicha solución.
 
 Con esto en mente sabemos que el programa desarrollado debe de llegar a la siguiente solución: 
+
+1.- Cruzar el río con el ganzo y dejarlo
+
+2.- Regresar sólo 
+
+3.- Cruzar el río con el costal de maíz
+
+4.- Dejar el costal de maíz y regresar con el ganzo
+
+5.- Dejar a el ganzo y cruzar el río con el zorro
+
+6.- Regresar sólo
+
+7.- Cruzar el río con el ganzo
+
+La solución esperada es que el programa sólo haga 7 movimientos para llegar al resultado final.
