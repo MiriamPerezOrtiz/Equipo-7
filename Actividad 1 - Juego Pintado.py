@@ -42,7 +42,7 @@ def circle(start, end):
     t = turtle.Turtle()
     r = 50
     t.circle(r)
-    pass  # TODO
+    pass
 
 
 def rectangle(start, end):
