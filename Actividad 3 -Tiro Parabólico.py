@@ -61,7 +61,10 @@ def move():
 
     for target in targets:
         if not inside(target):
-            return
+            x = randrange(-150, 150)
+            y = randrange(-150, 150)
+            target.x = x
+            target.y = y
 
     ontimer(move, 50)
 
