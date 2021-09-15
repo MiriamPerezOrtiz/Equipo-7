@@ -10,7 +10,6 @@ aim = vector(0, -10)
 # Elegir la velocidad de Snake
 v = 0
 
-
 def inicio(velocidad):
     print("¡Bienvenido al Snake Game!")
     velocidad = input(
