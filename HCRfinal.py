@@ -1,14 +1,16 @@
 
 import random
-
+#Creacion de vectores tipo string 
 Lado_A = ['Granjero', 'Zorro', 'Ganzo', 'Maiz']
 Lado_B = []
 Path = []
 
+#Se define la función 'seleccion' que selecciona al azar un personaje del Lado A
 def seleccion(L):
     op = random.randint(0,len(L)-1)
     return (L[op])
 
+#Se define la función 'Viaje' la cual le asigna al Granjero el personaje que llevara al Lado B
 def Viaje(F, D):
     p1 = seleccion(F)
     #print ('Selección -> ', p1)
@@ -23,6 +25,8 @@ def Viaje(F, D):
     #print (D)
     return ('Granjero',p1)
 
+#Se define la función "valida_estado" que se encarga de validar que los personajes no elegidos
+#puedan quedarse del mismo lado
 def valida_estado(L):
     if 'Maiz' in L and 'Ganzo' in L and len(L) == 2:
         return False
@@ -30,6 +34,8 @@ def valida_estado(L):
         return False
     return True
 
+#Se define la función "reiniciar_sistema" que reestablece el juego para iniciar
+#una nueva combinacion para buscar la solución más adecuada
 def reiniciar_sistema():
     global Lado_A, Lado_B, Path
     
@@ -37,7 +43,8 @@ def reiniciar_sistema():
     Lado_B = []
     Path = []
     
-
+#Se define la función "HCR" la cual integra las funciones anteriores para realizar la búsqueda de
+#la solución al acertijo
 def HCR():
     F = Lado_A
     D = Lado_B
@@ -56,13 +63,15 @@ def HCR():
             F = D
             D = Temp      
         else:
-            #print ('Estado inválido, REINICIO DEL SISTE;A')
+            #print ('Estado inválido, REINICIO DEL SISTEMA')
             reiniciar_sistema()
             F = Lado_A
             D = Lado_B
     return (Path)
 
-
+#Se define la función "main" que recibe la longitud de la solucion anterior. Si esta es mayor a 22,
+# se reinicia el sistema para buscar una solución más corta
+#Finalmente se imprime la solución.
 def main():
     P = HCR()
     while len(P) > 22:
@@ -71,7 +80,8 @@ def main():
         P = HCR()
     print (P)
     print (len(P))
-            
+
+#Se inicia el Programa
 main()
 
   
